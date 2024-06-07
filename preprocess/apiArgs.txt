@@ -1,0 +1,274 @@
+abs:int
+acos:float
+asctime:pointer
+asctime_r:pointer,pointer
+asin:float
+assert:int
+atan:float
+atan2:float
+atexit:pointer
+atof:pointer
+atoi:pointer
+atol:pointer
+bsearch:pointer, pointer, int, pointer
+btowc:int
+calloc:int, int
+catclose:nl_catd
+catgets:nl_catd, int, int, pointer
+catopen:pointer, int
+ceil:float
+clearerr:pointer
+cos:float
+cosh:float
+ctime:pointer
+ctime64:pointer
+ctime_r:pointer, pointer
+ctime64_r:pointer, pointer
+difftime:time_t, time_t
+difftime64:time64_t, time64_t
+div:int, int
+erf:float
+erfc:float
+exit:int
+exp:float
+fabs:float
+fclose:pointer
+fdopen:int, pointer
+feof:pointer
+ferror:pointer
+fflush:pointer
+fgetc:pointer
+fgetpos:pointer, pointer
+fgets:pointer, int, pointer
+fgetwc:pointer
+fgetws:pointer, int, pointer
+fileno:pointer
+floor:float
+fmod:float, float
+fopen:pointer, pointer
+fprintf:pointer
+fputc:int, pointer
+fputs:pointer, pointer
+fputwc:wchar_t, pointer
+fputws:pointer, pointer
+fread:pointer, int, int, pointer
+free:pointer
+freopen:pointer, pointer, pointer
+frexp:float, pointer
+fscanf:pointer
+fseek:pointer, int, int
+fsetpos:pointer, pointer
+ftell:pointer
+fwide:pointer, int
+fwprintf:pointer
+fwrite:pointer, int, int, pointer
+fwscanf:pointer
+gamma:float
+getc:pointer
+getenv:pointer
+gets:pointer
+getwc:pointer
+gmtime:pointer
+gmtime64:pointer
+gmtime_r:pointer,pointer
+gmtime64_r:pointer, pionter
+hypot:float, float
+isalnum:int
+isalpha:int
+isascii:int
+isblank:int
+iscntrl:int
+isdigit:int
+isgraph:int
+islower:int
+isprint:int
+ispunct:int
+isspace:int
+isupper:int
+iswalnum:wint_t
+iswalpha:wint_t
+iswblank:wint_t
+iswcntrl:wint_t
+iswctype:wint_t,wint_t
+iswdigit:wint_t
+iswgraph:wint_t
+iswlower:wint_t
+iswprint:wint_t
+iswpunct:wint_t
+iswspace:wint_t
+iswupper:wint_t
+iswxdigit:wint_t
+isxdigit:int
+j0:float
+j1:float
+jn:int, float
+labs:int
+ldexp:float, int
+ldiv:int, int
+localtime:pointer
+localtime64:pointer
+localtime_r:pointer,pointer
+localtime64_r:pointer,pointer
+log:float
+log10:float
+longjmp:jmp_buf, int
+malloc:int
+mblen:pointer,int
+mbrlen:pointer, int, pointer
+mbrtowc:pointer, pointer, int, pointer
+mbsinit:pointer
+mbsrtowc:pointer, pointer, int, pointer
+mbstowcs:pointer, pointer, int
+mbtowc:pointer,pointer, int
+memchr:pointer, int, int
+memcmp:pointer, pointer, int
+memcpy:pointer, pointer, int
+memmove:pointer, pointer, int
+memset:pointer, int, int
+mktime:pointer
+mktime64:pointer
+modf:float, pointer
+nextafter:float, float
+nextafterl:float, float
+nexttoward:float, float
+nexttowardl:float, float
+nl_langinfo:nl_item
+perror:pointer
+pown:float, float
+putc:int, pointer
+putchar:int
+putenv:pointer
+puts:pointer
+putwchar:wchar_t, pointer
+putwchar:wchar_t
+qsort:pointer, int ,int, pointer
+quantized32:_Decimal32, _Decimal32
+quantized64:_Decimal64, _Decimal64
+quantized128:_Decimal128, _Decimal128
+quantexpd32:_Decimal32
+quantexpd64:_Decimal64
+quantexpd128:_Decimal128
+samequantumd32:_Decimal32, _Decimal32
+samequantumd64:_Decimal64, _Decimal64
+samequantumd128:_Decimal128, _Decimal128
+raise:int
+realloc:pointer, int
+regcomp:pointer, pointer, int
+regerror:int, pointer, pointer, int
+regexec:pointer, pointer, int, pointer
+regfree:pointer
+remove:pointer
+rename:pointer, pointer
+rewind:pointer
+setbuf:pointer, pointer
+setjmp:jmp_buf
+setlocale:int, pointer
+setvbuf:pointer, pointer, int, int
+signal:int, pointer
+sin:float
+sinh:float
+snprintf:pointer, int
+sprintf:pointer
+sqrt:float
+srand:int
+sscanf:pointer
+srtcasecmp:pointer, pointer
+strcat:pointer, pointer
+strchr:pointer, int
+strcmp:pointer, pointer
+strcoll:pointer, pointer
+strcpy:pointer, pointer
+strcspn:pointer, pointer
+strerror:int
+strfmon:pointer, int
+strftime:pointer, int, skip_pointer, pointer
+strlen:pointer
+strncasecmp:pointer, pointer, int
+strncat:pointer, pointer, int
+strncmp:pointer, pointer, int
+strncpy:pointer, pointer, int
+strpbrk:pointer, pointer
+strptime:pointer, skip_pointer, pionter
+strrchr:pointer, int
+strspn:pointer, pointer
+strstr:pointer, pointer
+strtod:pointer, pointer
+strtod32:pointer, pointer
+strtod64:pointer, pointer
+strtod128:pointer, pointer
+strtof:pointer, pointer
+strtok:pointer, pointer
+strtok_r:pointer, pointer, pointer
+strtol:pointer, pointer, int
+strtold:pointer, pointer
+strtoul:pointer, pointer, int
+strxfrm:pointer, pointer, int
+swprintf:pointer, int
+swscanf:pointer
+system:pointer
+tan:float
+tanh:float
+time:pointer
+time64:pointer
+tmpnam:pointer
+toascii:int
+tolower:int
+toupper:int
+towctrans:wint_t, wctrans_t
+towlower:wint_t
+towupper:wint_t
+ungetc:int, pointer
+ungetwc:wint_t, pionter
+va_arg:va_list, var_type
+va_copy:va_list, va_list
+va_end:va_list
+va_start:va_list, variable_name
+vfprintf:pointer
+vfscanf:pointer
+vfwprintf:pointer
+vfwscanf:pointer
+vsprintf:pointer
+vsnprintf:pointer, int
+vswprintf:pointer, int
+wcrtomb:pointer, wchar_t, pointer
+wcscat:pointer, pointer
+wcschr:pointer, wchar_t
+wcscmp:pointer, pointer
+wcscoll:pointer, pointer
+wcscpy:pointer, pointer
+wcscspn:pointer, pointer
+wcsftime:pointer, int, skip_pointer, pionter
+wcslen:pointer
+wcsncat:pointer, pointer, int
+wcsncmp:pointer, pointer, int
+wcsncpy:pointer, pointer, int
+wcspbrk:pointer, pointer
+wcsptime:pointer, skip_pointer, pointer
+wcsrchr:pointer, wchar_t
+wcsrtombs:pointer, pointer, int, pointer
+wcsspn:pointer, pointer
+wcsstr:pointer, pointer
+wcstod:pointer, pointer
+wcstod32:pointer, pointer
+wcstod64:pointer, pointer
+wcstod128:pointer, pointer
+wcstof:pointer, pointer
+wcstok:pointer, pointer, pointer
+wcstol:pointer, pointer, int
+wcstold:pointer, pointer
+wcstombs:pointer, pointer, int
+wcstoul:pointer, pointer, int
+wcsxfrm:pointer, pointer, int
+wctob:wint_t
+wctomb:pointer, wint_t
+wctrans:pointer
+wctype:pointer
+wcswidth:pointer, int
+wmemchr:pointer, wchar_t, int
+wmemcmp:pointer, pointer, int
+wmemcpy:pointer, pointer, int
+wmemmove:pointer, pointer, int
+wmemset:pointer, wchar_t, int
+y0:float
+y1:float
+yn:int, float

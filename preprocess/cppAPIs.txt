@@ -1,0 +1,23 @@
+std::min - pointer, pointer
+std::string::size
+std::vector::push_back
+std::vector::pop_back
+std::vector::resize - int, pointer
+std::make_pair - pointer, pointer
+std::queue::front
+std::queue::pop
+std::queue::push
+std::max - pointer, pointer
+std::string::c_str
+std::sort - pointer, pointer
+std::vector::size
+std::next_permutation - pointer, pointer
+std::set::insert - pointer
+std::set::find - pointer
+std::set::erase - pointer
+std::mutiset::insert - pointer
+std::ceil - float
+std::floor - float
+std::fill - pointer, pointer, pointer
+std::string::memcpy - pointer, pointer, int
+std::string::memset - pointer, int, int
