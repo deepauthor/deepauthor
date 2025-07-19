@@ -1,23 +1,11 @@
 import subprocess, os, argparse
 from os.path import join, abspath, basename, exists, splitext
 
-CD = 'cd /home/yihua/joern/bin/joern-cli'
-# JOERN = './joern --script /Users/py/test.sc --params cpgFile=/Users/py/pesudo_c/00000000002a00a0,projectName=00000000002a00a0'
-# AST = '/home/yihua/Desktop/joern/dot/ast'
-# PDG = '/home/yihua/Desktop/joern/dot/pdg'
-# candi = [
-#         '/home/yihua/Desktop/projects/AuthorshipIdentification/gcj2020/binTest/sliceFunctions/slices', \
-#         '/home/yihua/Desktop/projects/AuthorshipIdentification/angrInstallTest/codeWithNewAngr/mytest/slices', \
-#         '/home/yihua/Desktop/projects/AuthorshipIdentification/gcj2020/binTest/caseFromC/slices', \
-#         '/Users/py/pesudo_c', \
-#         ]
-# pesudo_c_path = candi[2]
-CPG_DIR = '/home/yihua/joern/bin/joern-cli'
-# importCode(inputPath="/Users/py/pesudo_c/00000000002a00a0", projectName="00000000002a00a0")
-# run.ossdataflow
-# save
-# joern-export --repr ast --out 00000000002a00a0
-# joern-export --repr pdg --out 00000000002a00a0
+# to customize your joern path
+CPG_DIR = '/joern/bin/joern-cli'
+CD = 'cd '+CPG_DIR
+
+
 parser = argparse.ArgumentParser()
 parser.add_argument('-n', "--number", type=int, help="slice dataset into number parts", default=1)
 parser.add_argument('-i', "--index", type=int, help="index of the part of dataset", default=0)
@@ -25,16 +13,7 @@ parser.add_argument('-p', "--psdcpath", type=str, help="the path of all pesudo c
 parser.add_argument('-dot', "--dotpath", type=str, help="the path of 'dot' dir contains all ASTs & PDGs dot files", default=0)
 args = parser.parse_args()
 pesudo_c_path=os.path.abspath(args.psdcpath)
-# DOT = args.dotpath
-# AST = os.path.join(os.path.abspath(args.dotpath), 'ast')
-# if not os.path.exists(AST):
-#     os.makedirs(AST)
-# PDG = os.path.join(os.path.abspath(args.dotpath), 'pdg')
-# if not os.path.exists(PDG):
-#     os.makedirs(PDG)
 
-# Using scala script instead of interactive scripts
-# ./joern --script /Users/py/test.sc --params cpgFile=/Users/py/pesudo_c/00000000002a00a0,projectName=00000000002a00a0
 
 numb = args.number
 nthPart = args.index
