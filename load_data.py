@@ -141,7 +141,7 @@ def read(datadir, dataname, max_nodes):
                 label_vals.append(val)
             graph_labels.append(val)
     #graph_labels = np.array(graph_labels)
-    # enumerate bugs by yihua
+    # enumerate bugs by 
     # label_map_to_int = {val: i for i, val in enumerate(label_vals)}
     label_map_to_int = dict()
     i = 0
