@@ -25,9 +25,9 @@ class GraphConv(nn.Module):
             device = torch.device("cuda")
         self.device = device
         # print("cpu:{},\t device:{}".format(cpu, self.device))
-        self.weight = nn.Parameter(torch.FloatTensor(input_dim, output_dim).to(self.device)) # by yihua cuda())
+        self.weight = nn.Parameter(torch.FloatTensor(input_dim, output_dim).to(self.device)) # by  cuda())
         if bias:
-            self.bias = nn.Parameter(torch.FloatTensor(output_dim).to(self.device)) # by yihua cuda())
+            self.bias = nn.Parameter(torch.FloatTensor(output_dim).to(self.device)) # by  cuda())
         else:
             self.bias = None
 
@@ -60,13 +60,13 @@ class GcnEncoderGraph(nn.Module):
         self.bias = True
         if args is not None:
             self.bias = args.bias
-            if args.cpu: # by yihua
+            if args.cpu: # by 
                 self.device = torch.device("cpu")
                 self.cpu = True
             else:
                 self.device = torch.device("cuda")
                 self.cpu = False
-        else: # by yihua
+        else: # by 
             self.cpu = True
 
         self.conv_first, self.conv_block, self.conv_last = self.build_conv_layers(
@@ -123,17 +123,17 @@ class GcnEncoderGraph(nn.Module):
         packed_masks = [torch.ones(int(num)) for num in batch_num_nodes]
         batch_size = len(batch_num_nodes)
         out_tensor = torch.zeros(batch_size, max_nodes)
-        i = 0 # enumerate() has bugs with cuda so change it by yihua
+        i = 0 # enumerate() has bugs with cuda so change it by 
         # for i, mask in enumerate(packed_masks):
         for mask in packed_masks:
             out_tensor[i, :batch_num_nodes[i]] = mask
             i += 1
-        return out_tensor.unsqueeze(2).to(self.device) # by yihua cuda()
+        return out_tensor.unsqueeze(2).to(self.device) # by  cuda()
 
     def apply_bn(self, x):
         ''' Batch normalization of 3D tensor x
         '''
-        bn_module = nn.BatchNorm1d(x.size()[1]).to(self.device) # by yihua cuda()
+        bn_module = nn.BatchNorm1d(x.size()[1]).to(self.device) # by  cuda()
         return bn_module(x)
 
     def gcn_forward(self, x, adj, conv_first, conv_block, conv_last, embedding_mask=None):
@@ -219,7 +219,7 @@ class GcnEncoderGraph(nn.Module):
 
         elif typee == 'margin':
             batch_size = pred.size()[0]
-            label_onehot = torch.zeros(batch_size, self.label_dim).long().to(self.device) # by yihua cuda()
+            label_onehot = torch.zeros(batch_size, self.label_dim).long().to(self.device) # by  cuda()
             label_onehot.scatter_(1, label.view(-1,1), 1)
             return torch.nn.MultiLabelMarginLoss()(pred, label_onehot)
             
@@ -410,7 +410,7 @@ class SoftPoolingGcnEncoder(GcnEncoderGraph):
             for adj_pow in range(adj_hop-1):
                 tmp = tmp @ pred_adj0
                 pred_adj = pred_adj + tmp
-            pred_adj = torch.min(pred_adj, torch.ones(1, dtype=pred_adj.dtype).to(self.device)) # by yihua cuda())
+            pred_adj = torch.min(pred_adj, torch.ones(1, dtype=pred_adj.dtype).to(self.device)) # by  cuda())
             #print('adj1', torch.sum(pred_adj0) / torch.numel(pred_adj0))
             #print('adj2', torch.sum(pred_adj) / torch.numel(pred_adj))
             #self.link_loss = F.nll_loss(torch.log(pred_adj), adj)
@@ -675,7 +675,7 @@ class SoftPoolingGcnEncoder_4_ast_n_pdg(SoftPoolingGcnEncoder_my_module_base):
             for adj_pow in range(adj_hop-1):
                 tmp = tmp @ pred_adj0
                 pred_adj = pred_adj + tmp
-            pred_adj = torch.min(pred_adj, torch.ones(1, dtype=pred_adj.dtype).to(self.device)) # by yihua cuda())
+            pred_adj = torch.min(pred_adj, torch.ones(1, dtype=pred_adj.dtype).to(self.device)) # by  cuda())
             #print('adj1', torch.sum(pred_adj0) / torch.numel(pred_adj0))
             #print('adj2', torch.sum(pred_adj) / torch.numel(pred_adj))
             #self.link_loss = F.nll_loss(torch.log(pred_adj), adj)
