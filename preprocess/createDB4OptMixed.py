@@ -23,12 +23,12 @@ class createMixedDB():
                 self.dbInfo = json.load(f)
         else:
             self.dbInfo = None
-        # self.srcDirPath = join(dbBasePath, 'src')
-        self.srcDirPath = '/media/yihua/2TB/backup/gcj-src/'
+        self.srcDirPath = join(dbBasePath, 'src')
+
         self.srcInfoJson = join(self.srcDirPath, 'src_Info.json')
-        self.binDirPath = '/media/yihua/2TB/backup/gcj-bin/'
-        # if not exists(self.binDirPath):
-        #     run('mkdir -p '+self.binDirPath, shell=True)
+
+        if not exists(self.binDirPath):
+            run('mkdir -p '+self.binDirPath, shell=True)
         assert exists(self.binDirPath), 'there must be a folder containing all binaries.'
         self.optLvs = ['-O0', '-O1', '-O2', '-O3']
         self.binInfoJson = join(self.binDirPath, "bin_Info.json")
