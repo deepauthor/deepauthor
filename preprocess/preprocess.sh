@@ -11,7 +11,7 @@ if [[ ${dataset,,} == 'github' ]]; then
     read -p "Input the number of balance (default value: 0)" numOfBalance
     numOfBalance="${numOfBalance:=0}"
 elif [[ ${dataset,,} == 'gcj' ]]; then
-    root='/media/yihua/2TB/backup'
+    root='/media/2TB/backup'
     read -p "Input folder name in 'data':(default valule: 50_exact_opt0) " dbname
     dbname="${dbname:=50_exact_opt0}"
     # dbname=$1
@@ -181,7 +181,7 @@ fi
 if [[ $start -le $step5 ]]; then
     #statements
     # on my desktop can only allow two processes at the same time
-    dataPath='/media/yihua/2TB/backup/graph_models/diffpool/data'
+    dataPath='/media/2TB/backup/graph_models/diffpool/data'
     if [[ ${dataset,,} == 'github' ]]; then
         #statements
         arg1="-dot $dotDirPath -d $dataPath -n $dataName -bn $numOfBalance -under_sample -N 1 -i 0"
