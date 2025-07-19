@@ -1,6 +1,8 @@
 ## DEEPAUTHOR
 This is the repo. for DEEPAUTHOR.
-
+1st, build a dataset by using buildDB.py
+2nd, run preprocess.sh; For correctly running, you need to configure the path of root.
+3rd, run deepauthor.py --bmname "name_of_folder_in_data" --method soft-assign --batch-size 8 --num_workers 2  --num-classes 6 --save_model '/path/to/save/model.pth' --new_train --epoch 20
 <!--
 **deepauthor/deepauthor** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
