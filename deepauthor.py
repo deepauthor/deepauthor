@@ -126,11 +126,11 @@ def get_data_from_fn(fn, device):
         h0_ast = Variable(s['ast']['feats'].float()).to(device)
         batch_num_nodes_ast = s['ast']['num_nodes'].int().numpy()
         assign_input_ast = Variable(s['ast']['assign_feats'].float(), requires_grad=False).to(device)
-        adj_pdg = Variable(s['pdg']['adj'].float(), requires_grad=False).to(device) # by yihua cuda()
-        h0_pdg = Variable(s['pdg']['feats'].float()).to(device) # by yihua cuda()
+        adj_pdg = Variable(s['pdg']['adj'].float(), requires_grad=False).to(device) # by  cuda()
+        h0_pdg = Variable(s['pdg']['feats'].float()).to(device) # by  cuda()
         # labels.append(s['pdg']['label'].long().numpy())
         batch_num_nodes_pdg = s['pdg']['num_nodes'].int().numpy()
-        assign_input_pdg = Variable(s['pdg']['assign_feats'].float(), requires_grad=False).to(device) # by yihua cuda()
+        assign_input_pdg = Variable(s['pdg']['assign_feats'].float(), requires_grad=False).to(device) # by  cuda()
         ret.append((h0_ast, adj_ast, batch_num_nodes_ast, assign_input_ast, 
                     h0_pdg, adj_pdg, batch_num_nodes_pdg, assign_input_pdg))
 
@@ -149,7 +149,7 @@ def model_evaluate(dataset, model, args, name='Validation', max_num_examples=Non
         device = torch.device("cpu")
     else:
         device = torch.device("cuda")
-    # combination embedding by yihua
+    # combination embedding by 
     # for batch_idx, data in enumerate(dataset):
     batch_idx = 0
     for data in dataset:
@@ -209,7 +209,7 @@ def model_train(train_dataset, model, args, same_feat=True, val_dataset=None, te
         avg_loss = 0.0
         model.train()
         print('Epoch: ', epoch)
-        # enumerate has bugs with cuda so change it by yihua
+        # enumerate has bugs with cuda so change it by 
         # for batch_idx, data in enumerate(dataset):
         batch_idx = 0
 
@@ -380,7 +380,7 @@ def getWeight(train_dataset):
 
 def benchmark_task_val(args, writer=None, feat='node-feat'):
     all_vals = []
-    # change input files to individual sub-directories by Yihua
+    # change input files to individual sub-directories by 
     target_path = os.path.join(args.datadir, args.bmname)
     slice_dirs = [join(target_path, d) for d in os.listdir(target_path) if isdir(join(target_path, d))]
 
@@ -424,7 +424,7 @@ def benchmark_task_val(args, writer=None, feat='node-feat'):
             model = SiameseArch_fn_weighted( max_num_nodes,
                     input_dim, args.hidden_dim, args.output_dim, args.num_classes, args.num_gc_layers,
                     args.hidden_dim, assign_input_dim, weight, assign_ratio=args.assign_ratio, num_pooling=args.num_pool,
-                    bn=args.bn, dropout=args.dropout, linkpred=args.linkpred, args=args).to(device) # by yihua cuda()
+                    bn=args.bn, dropout=args.dropout, linkpred=args.linkpred, args=args).to(device) # by  cuda()
             print("model building finished")
         _, val_accs = model_train(train_dataset, model, args, val_dataset=val_dataset, test_dataset=None)
             # writer=writer)
