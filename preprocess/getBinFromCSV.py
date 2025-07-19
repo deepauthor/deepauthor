@@ -9,8 +9,8 @@ from Util import CSVFile, SrcFile, BinFile
 
 def getNcompileSrcCodeByNum():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--srcDir", type=str, help="source code output dir", default='/media/yihua/2TB/backup/gcj-src/')
-    parser.add_argument("--binDir", type=str, help="bin output dir", default='/media/yihua/2TB/backup/gcj-bin/')
+    parser.add_argument("--srcDir", type=str, help="source code output dir", default='/media/2TB/backup/gcj-src/')
+    parser.add_argument("--binDir", type=str, help="bin output dir", default='/media/2TB/backup/gcj-bin/')
     parser.add_argument("--csvDir", type=str, help="point to all csv files dir", default=None)
     parser.add_argument("--csvFile", type=str, help="point to a csv file", default=None)
     parser.add_argument('--fileNum', type=int, help="the min num of files for each author.", required=True)
